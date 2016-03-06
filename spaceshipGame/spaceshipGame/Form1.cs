@@ -32,6 +32,17 @@ namespace spaceshipGame
             {
                 e.Graphics.FillEllipse(new SolidBrush(Color.White), drawStars(i + 1));
             }
+            using (Font font1 = new Font("Comic Sans MS", 15, FontStyle.Bold, GraphicsUnit.Pixel))
+            {
+                Pen pen = new Pen(Brushes.Yellow, 2);
+                StringFormat stringFormat = new StringFormat();
+                stringFormat.Alignment = StringAlignment.Center;
+                stringFormat.LineAlignment = StringAlignment.Center;
+                RectangleF rectF1 = new RectangleF(500, 30, 250, 30);
+                e.Graphics.FillRectangle(Brushes.White, Rectangle.Round(rectF1));
+                e.Graphics.DrawRectangle(pen, Rectangle.Round(rectF1));
+                e.Graphics.DrawString("Level: 1 Score: 200 Live: ***** ", font1, Brushes.Black, rectF1, stringFormat);
+            }
         }
 
         private PointF[] drawArrow(int x, int y)
